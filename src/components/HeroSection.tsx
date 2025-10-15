@@ -30,25 +30,46 @@
 
 // export default HeroSection;
 
-
-
-
-
-
-
-import heroImage from "@/assets/image.png";
+import heroImage from "@/assets/image.png"; // desktop banner
+import ecomImage from "@/assets/ecom.jpg";  // mobile square banner
 
 const HeroSection = () => {
   return (
-    <section className="w-full">
-      <img
-        src={heroImage}
-        alt="Hero Banner"
-        className="w-full h-[30vh] md:h-[50vh] object-cover object-center"
-      />
+    <section className="w-full relative bg-[hsl(var(--hero-bg))]">
+      {/* 💻 Desktop / Laptop View (unchanged) */}
+      <div className="hidden sm:block">
+        <img
+          src={heroImage}
+          alt="Hero Banner"
+          className="w-full h-[50vh] object-cover object-center"
+        />
+      </div>
+
+      {/* 📱 Mobile View */}
+      <div className="sm:hidden flex flex-col items-center justify-center px-4 py-8 text-center">
+        <img
+          src={ecomImage}
+          alt="Mobile Hero"
+          className="w-4/5 max-w-[400px] aspect-square object-cover rounded-xl shadow-lg mb-5"
+        />
+
+        {/* Enhanced mobile text */}
+        <div className="space-y-3">
+          <h2 className="text-2xl font-extrabold text-[hsl(var(--foreground))] tracking-tight drop-shadow-sm">
+            ✨ New Collection is Here ✨
+          </h2>
+
+          <p className="text-base font-medium text-[hsl(var(--muted-foreground))] leading-snug">
+            Discover trendy earrings that define your style.
+          </p>
+
+          <button className="mt-4 bg-primary text-white px-6 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-primary/90 active:scale-95 transition-all">
+            Shop Now
+          </button>
+        </div>
+      </div>
     </section>
   );
 };
 
 export default HeroSection;
-
