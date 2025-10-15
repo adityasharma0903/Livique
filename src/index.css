@@ -193,3 +193,25 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer utilities {
+  .container {
+    @apply px-3 sm:px-4 lg:px-8;
+  }
+
+  button, select {
+    @apply touch-manipulation;
+  }
+
+  img {
+    @apply select-none;
+  }
+}
