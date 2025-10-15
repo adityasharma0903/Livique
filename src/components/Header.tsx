@@ -34,7 +34,7 @@ const Header = () => {
         <div className="container mx-auto flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2">
             <div className="text-2xl">🛒</div>
-            <span className="text-xl font-bold">Shopcart</span>
+            <span className="text-xl font-bold">Livique</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">

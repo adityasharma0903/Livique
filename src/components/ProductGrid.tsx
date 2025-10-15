@@ -11,16 +11,6 @@ const ProductGrid = () => {
             <ProductCard key={product.id} {...product} />
           ))}
 
-
-
-
-
-
-
-
-
-
-
         </div>
       </div>
     </section>
