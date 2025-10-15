@@ -56,7 +56,7 @@ const HeroSection = () => {
         {/* Enhanced mobile text */}
         <div className="space-y-3">
           <h2 className="text-2xl font-extrabold text-[hsl(var(--foreground))] tracking-tight drop-shadow-sm">
-            ✨ New Collection is Here ✨
+           New Collection is Here 
           </h2>
 
           <p className="text-base font-medium text-[hsl(var(--muted-foreground))] leading-snug">
