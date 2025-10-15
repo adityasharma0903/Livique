@@ -10,12 +10,12 @@ import product8 from "@/assets/product-8.jpg";
 export const products = [
   {
     id: 1,
-    name: "Wireless Earbuds, IPX8",
-    price: "89.99",
+    name: "Ear Rings",
+    price: "50.00",
     image: product1,
     rating: 5,
     reviews: 121,
-    description: "Organic Cotton, fairtrade certified"
+    description: "Bride look"
   },
   {
     id: 2,

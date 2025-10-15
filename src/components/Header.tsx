@@ -13,19 +13,19 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-1">
             <Phone className="h-3 w-3" />
-            <span>+001234567890</span>
+            <span>+919350581175</span>
           </div>
           <div className="hidden md:block text-center flex-1">
             Get 50% Off on Selected Items | Shop Now
           </div>
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <select className="bg-transparent border-none text-black text-xs">
               <option>Eng</option>
             </select>
             <select className="bg-transparent border-none text-black text-xs">
               <option>Location</option>
             </select>
-          </div>
+          </div> */}
         </div>
       </div>
 

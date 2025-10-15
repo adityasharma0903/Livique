@@ -53,7 +53,7 @@ const ProductCard = ({ id, name, price, image, rating, reviews, description }: P
           <h3 className="font-semibold text-base hover:text-primary cursor-pointer line-clamp-1">{name}</h3>
         </Link>
         <div className="flex items-baseline gap-1">
-          <span className="text-xl font-bold">${price}</span>
+          <span className="text-xl font-bold">Rs {price}</span>
         </div>
         
         <div className="flex items-center gap-1">

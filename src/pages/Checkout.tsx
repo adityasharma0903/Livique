@@ -50,13 +50,13 @@ const Checkout = () => {
     const orderDetails = items
       .map(
         (item) =>
-          `${item.quantity}x ${item.name} - $${(
+          `${item.quantity}x ${item.name} - Rs ${(
             parseFloat(item.price) * item.quantity
           ).toFixed(2)}`
       )
       .join("%0A");
 
-    const message = `*New Order*%0A%0A*Customer Details:*%0AName: ${formData.name}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0AAddress: ${formData.address}, ${formData.city} ${formData.postalCode}%0A%0A*Order Items:*%0A${orderDetails}%0A%0A*Total: $${getTotalPrice().toFixed(2)}*%0A%0A*Notes:* ${formData.notes || "None"}`;
+    const message = `*New Order*%0A%0A*Customer Details:*%0AName: ${formData.name}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0AAddress: ${formData.address}, ${formData.city} ${formData.postalCode}%0A%0A*Order Items:*%0A${orderDetails}%0A%0A*Total: Rs ${getTotalPrice().toFixed(2)}*%0A%0A*Notes:* ${formData.notes || "None"}`;
 
     // WhatsApp number (replace with your business number)
     const whatsappNumber = "7743062799";
@@ -188,7 +188,7 @@ const Checkout = () => {
                       {item.quantity}x {item.name}
                     </span>
                     <span className="font-semibold">
-                      ${(parseFloat(item.price) * item.quantity).toFixed(2)}
+                      Rs {(parseFloat(item.price) * item.quantity).toFixed(2)}
                     </span>
                   </div>
                 ))}
@@ -197,7 +197,7 @@ const Checkout = () => {
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Subtotal</span>
                   <span className="font-semibold">
-                    ${getTotalPrice().toFixed(2)}
+                    Rs {getTotalPrice().toFixed(2)}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -208,7 +208,7 @@ const Checkout = () => {
                   <div className="flex justify-between text-lg">
                     <span className="font-bold">Total</span>
                     <span className="font-bold text-primary">
-                      ${getTotalPrice().toFixed(2)}
+                      Rs {getTotalPrice().toFixed(2)}
                     </span>
                   </div>
                 </div>

@@ -47,7 +47,7 @@ const Cart = () => {
                 <div className="flex-1">
                   <h3 className="font-semibold mb-2">{item.name}</h3>
                   <p className="text-lg font-bold text-primary mb-2">
-                    ${item.price}
+                    Rs {item.price}
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="flex items-center border rounded-md">
@@ -86,7 +86,7 @@ const Cart = () => {
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-lg">
-                    ${(parseFloat(item.price) * item.quantity).toFixed(2)}
+                    Rs {(parseFloat(item.price) * item.quantity).toFixed(2)}
                   </p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ const Cart = () => {
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Subtotal</span>
                   <span className="font-semibold">
-                    ${getTotalPrice().toFixed(2)}
+                    Rs {getTotalPrice().toFixed(2)}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -112,7 +112,7 @@ const Cart = () => {
                   <div className="flex justify-between text-lg">
                     <span className="font-bold">Total</span>
                     <span className="font-bold text-primary">
-                      ${getTotalPrice().toFixed(2)}
+                      Rs {getTotalPrice().toFixed(2)}
                     </span>
                   </div>
                 </div>
