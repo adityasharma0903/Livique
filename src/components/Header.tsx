@@ -1,10 +1,28 @@
-import { Search, User, ShoppingCart, Phone } from "lucide-react";
+// Header.tsx
+
+import React from 'react';
+import { Search, ShoppingCart, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+// 1. Define the props interface, marking onSearchChange as optional
+interface HeaderProps {
+  onSearchChange?: (term: string) => void;
+}
+
+// 2. Assign the props type to the functional component
+const Header: React.FC<HeaderProps> = ({ onSearchChange }) => {
   const { getTotalItems } = useCart();
+
+  // Handler to call the prop function when the input changes
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // 3. Conditional check is still necessary for runtime safety, 
+    // but the TypeScript error is solved by the HeaderProps interface.
+    if (onSearchChange) {
+      onSearchChange(event.target.value);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 shadow-md">
@@ -43,9 +61,6 @@ const Header = () => {
             <a href="#" className="hover:text-[hsl(var(--primary))]">
               What's New
             </a>
-            <a href="#" className="hover:text-[hsl(var(--primary))]">
-              Delivery
-            </a>
           </nav>
 
           {/* Search Bar */}
@@ -55,6 +70,8 @@ const Header = () => {
                 type="text"
                 placeholder="Search Product"
                 className="w-full px-4 py-2 border rounded-md pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
+                // Only attach the handler if onSearchChange was provided
+                onChange={onSearchChange ? handleInputChange : undefined}
               />
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
             </div>
@@ -62,10 +79,6 @@ const Header = () => {
 
           {/* Icons */}
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" className="hover:text-[hsl(var(--primary))]">
-              <User className="h-5 w-5" />
-            </Button>
-
             <Link to="/cart">
               <Button
                 variant="ghost"
