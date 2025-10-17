@@ -81,17 +81,17 @@ const Header: React.FC<HeaderProps> = ({ onSearchChange }) => {
           <div className="flex items-center gap-4">
             <Link to="/cart">
               <Button
-                variant="ghost"
-                size="icon"
-                className="relative hover:text-[hsl(var(--primary))]"
-              >
-                <ShoppingCart className="h-5 w-5" />
-                {getTotalItems() > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[hsl(var(--primary))] text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-                    {getTotalItems()}
-                  </span>
-                )}
-              </Button>
+  variant="ghost"
+  className="relative group bg-transparent hover:bg-transparent p-2" // padding adjust
+>
+  <ShoppingCart className="h-12 w-12 text-black group-hover:text-gray-500 transition-colors duration-300" />
+  {getTotalItems() > 0 && (
+    <span className="absolute -top-1 -right-1 bg-[hsl(var(--primary))] text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+      {getTotalItems()}
+    </span>
+  )}
+</Button>
+
             </Link>
           </div>
         </div>

@@ -18,7 +18,9 @@ const Cart = () => {
             Add some products to get started!
           </p>
           <Link to="/">
-            <Button>Continue Shopping</Button>
+            <Button className="hover:shadow-md hover:bg-transparent">
+              Continue Shopping
+            </Button>
           </Link>
         </div>
       </div>
@@ -54,7 +56,7 @@ const Cart = () => {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-8 w-8"
+                        className="h-8 w-8 hover:shadow-md hover:bg-transparent hover:text-black"
                         onClick={() =>
                           updateQuantity(item.id, item.quantity - 1)
                         }
@@ -67,7 +69,7 @@ const Cart = () => {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-8 w-8"
+                        className="h-8 w-8 hover:shadow-md hover:bg-transparent hover:text-black"
                         onClick={() =>
                           updateQuantity(item.id, item.quantity + 1)
                         }
@@ -78,6 +80,7 @@ const Cart = () => {
                     <Button
                       variant="ghost"
                       size="icon"
+                      className="hover:shadow-md hover:bg-transparent"
                       onClick={() => removeFromCart(item.id)}
                     >
                       <Trash2 className="h-4 w-4 text-destructive" />
@@ -118,14 +121,18 @@ const Cart = () => {
                 </div>
               </div>
               <Button
-                className="w-full"
+                className="w-full hover:shadow-md hover:bg-red-900 "
                 size="lg"
                 onClick={() => navigate("/checkout")}
               >
                 Proceed to Checkout
               </Button>
               <Link to="/">
-                <Button variant="outline" className="w-full mt-2" size="lg">
+                <Button
+                  variant="outline"
+                  className="w-full mt-2 hover:shadow-md hover:bg-transparent hover:text-black"
+                  size="lg"
+                >
                   Continue Shopping
                 </Button>
               </Link>
